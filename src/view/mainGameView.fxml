@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="root" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@mainGameView.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainGameViewController">
+   <top>
+      <HBox fx:id="passivePlayersDisplay" alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <GridPane alignment="CENTER" prefHeight="945.0" prefWidth="1310.0" vgap="20.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" maxWidth="1210.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="422.0" minHeight="298.0" percentHeight="50.0" prefHeight="364.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="10.0" percentHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints percentHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label styleClass="normal" text="Expeditionsaufrufe" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" style="-fx-border-color: #F5F5DC; -fx-border-width: 5;" styleClass="hbox-background">
+               <children>
+                  <ScrollPane fx:id="expeditionPane" prefWidth="1231.0" style="-fx-border-width: 5;">
+                     <padding>
+                        <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                     </padding>
+                     <content>
+                        <HBox fx:id="expeditionsDisplay" alignment="CENTER" spacing="20.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+            <Label styleClass="normal" text="Hafenbereich" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" style="-fx-border-color: #F5F5DC;  -fx-border-width: 5;" styleClass="hbox-background" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+               <children>
+                  <ScrollPane fx:id="harborPane" prefWidth="1231.0" style="-fx-border-width: 5;">
+                     <content>
+                        <HBox fx:id="harborDisplay" alignment="CENTER" spacing="20.0" />
+                     </content>
+                     <padding>
+                        <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                     </padding>
+                  </ScrollPane>
+               </children>
+            </HBox>
+            <Label alignment="CENTER" styleClass="title" text="Port Royal" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </GridPane>
+   </center>
+   <bottom>
+      <GridPane prefHeight="130.0" prefWidth="1850.0" BorderPane.alignment="TOP_CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="435.0" prefWidth="452.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="1049.0" />
+          <ColumnConstraints hgrow="SOMETIMES" percentWidth="18.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="200.0" prefHeight="200.0" valignment="TOP" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox prefHeight="159.0" prefWidth="446.0">
+               <children>
+                  <VBox minWidth="300.0" prefHeight="192.0" prefWidth="421.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="340.0">
+                           <children>
+                              <GridPane prefHeight="21.0" prefWidth="385.0">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="91.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="245.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label fx:id="actingPlayerName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="24.0" minWidth="100.0" style="-fx-border-color: BLACK; -fx-border-radius: 50; -fx-background-color: WHITE; -fx-background-radius: 50;" text="Player 1" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label prefHeight="26.0" prefWidth="127.0" text="Dran ist:" textFill="#fffdfd">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <opaqueInsets>
+                              <Insets top="5.0" />
+                           </opaqueInsets>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="421.0" spacing="5.0">
+                           <children>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <ImageView fitHeight="82.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/symbols/victory_point_symbol.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <Label fx:id="victoryPointsLabel" alignment="CENTER" style="-fx-background-color: WHITE; -fx-border-color: BLACK;" text="12" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane alignment="CENTER">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <ImageView fitHeight="82.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/symbols/coin_symbol.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <Label fx:id="coinLabel" alignment="CENTER" style="-fx-background-color: WHITE; -fx-border-color: BLACK;" text="3" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <ImageView fitHeight="82.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/symbols/swords_symbol.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <Label fx:id="swordsLabel" alignment="CENTER" style="-fx-background-color: WHITE; -fx-border-color: BLACK;" text="3" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <ImageView fitHeight="82.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/symbols/anchor_symbol.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <Label fx:id="anchorsLabel" alignment="CENTER" style="-fx-background-color: WHITE; -fx-border-color: BLACK;" text="2 (+1)" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <ImageView fitHeight="82.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/symbols/cross_symbol.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <Label fx:id="crossesLabel" alignment="CENTER" style="-fx-background-color: WHITE; -fx-border-color: BLACK;" text="1 (+1)" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <ImageView fitHeight="82.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/symbols/house_symbol.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <Label fx:id="housesLabel" alignment="CENTER" style="-fx-background-color: WHITE; -fx-border-color: BLACK;" text="0 (+1)" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </HBox>
+            <HBox prefHeight="250.0" prefWidth="1017.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </GridPane.margin>
+               <children>
+                  <ScrollPane fx:id="playersCardsScrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="300.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="250.0" prefWidth="1057.0" rotate="180.0" vbarPolicy="NEVER">
+                     <content>
+                        <HBox fx:id="playersCardsDisplay" alignment="TOP_CENTER" fillHeight="false" prefHeight="250.0" prefWidth="995.0" rotate="180.0">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+            <GridPane hgap="20.0" prefHeight="106.0" prefWidth="320.0" vgap="20.0" GridPane.columnIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="26.0" percentWidth="50.0" prefWidth="166.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="137.0" percentWidth="50.0" prefWidth="180.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints valignment="TOP" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="undoButton" mnemonicParsing="false" onAction="#undoClicked" prefHeight="46.0" prefWidth="189.0" styleClass="normal" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/symbols/undo_symbol.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="redoButton" mnemonicParsing="false" onAction="#redoClicked" prefHeight="30.0" prefWidth="120.0" styleClass="normal" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/symbols/redo_symbol.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button mnemonicParsing="false" onAction="#hintClicked" prefHeight="35.0" prefWidth="148.0" styleClass="normal" text="Hinweis" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                  <Button cancelButton="true" mnemonicParsing="false" onAction="#mainMenuClicked" prefHeight="34.0" prefWidth="144.0" styleClass="normal" text="Hauptmenü" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+               </children>
+            </GridPane>
+         </children>
+         <BorderPane.margin>
+            <Insets right="20.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </bottom>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+   </padding>
+   <left>
+      <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="250.0" BorderPane.alignment="CENTER_LEFT">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="405.0" minHeight="10.0" percentHeight="90.0" prefHeight="397.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="405.0" minHeight="10.0" percentHeight="90.0" prefHeight="397.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <VBox fx:id="drawPile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="140.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label fx:id="drawPileCardsCount" alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: WHITE; -fx-border-color: BLACK;" text="120" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Label>
+            <Button fx:id="endPhase" mnemonicParsing="false" onAction="#endPhaseClicked" prefHeight="51.0" prefWidth="201.0" text="Phase beenden" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </GridPane>
+   </left>
+   <right>
+      <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="405.0" minHeight="10.0" percentHeight="90.0" prefHeight="397.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="405.0" minHeight="10.0" percentHeight="90.0" prefHeight="397.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <VBox fx:id="discardPile" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="140.0" />
+            <Label fx:id="discardPileCardsCount" alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: WHITE; -fx-border-color: BLACK;" text="0" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Label>
+            <Button fx:id="logButton" mnemonicParsing="false" onAction="#logClicked" text="Log" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+         </children>
+      </GridPane>
+   </right>
+</BorderPane>

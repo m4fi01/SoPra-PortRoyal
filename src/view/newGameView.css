@@ -1,0 +1,54 @@
+@font-face {
+	font-family: SkullsAndCrossbones;
+	src: url('fonts/SkullsAndCrossbones.ttf');
+}
+
+@font-face {
+	font-family: BlackPearl;
+	src: url('fonts/BlackPearl.ttf');
+}
+
+#root {
+	-fx-background-image: url("images/menu/wood_background.jpg");
+	-fx-background-repeat: stretch;
+	-fx-background-position: center center;
+}
+
+.label {
+	-fx-font-size: 18;
+	-fx-text-fill: #F5F5DC;
+	-fx-font-family: 'BlackPearl';
+}
+
+.mainLabel{
+	-fx-font-size: 22;
+	-fx-text-fill: #F5F5DC;
+	-fx-font-family: 'BlackPearl';
+}
+
+.button {
+	-fx-font-size: 18;
+	-fx-font-family: 'BlackPearl';
+	-fx-text-fill: #F5F5DC;
+	-fx-background-color: transparent;
+}
+.slider{
+	-fx-text-fill: #F5F5DC;
+	-fx-color-label-visible: black;
+}
+
+.buttonStart {
+	-fx-font-size: 20;
+	-fx-font-family: 'BlackPearl';
+}
+
+.radio-button {
+    -fx-font-size: 14;
+	-fx-text-fill: #F5F5DC;
+    -fx-font-family: 'BlackPearl';
+}
+
+.list-view {
+    -fx-background-color: rgba(212, 196, 190, 0.35);
+}
+	

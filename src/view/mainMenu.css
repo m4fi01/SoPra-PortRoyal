@@ -1,0 +1,41 @@
+@font-face {
+    font-family: SkullsAndCrossbones;
+    src: url('fonts/SkullsAndCrossbones.ttf');
+}
+
+@font-face {
+    font-family: BlackPearl;
+    src: url('fonts/BlackPearl.ttf');
+}
+
+#root {
+    -fx-background-image: url("images/menu/wood_background.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+}
+
+.title {
+    -fx-font-size: 36;
+    -fx-text-fill: #F5F5DC;
+    -fx-font-family: 'SkullsAndCrossbones';
+}
+.label{
+    -fx-text-fill: #F5F5DC;
+}
+
+.topScoreLabel{
+    -fx-text-fill: black;
+    -fx-font-family: 'BlackPearl';
+    -fx-font-size:24;
+}
+
+.button {
+    -fx-font-size: 24;
+    -fx-font-family: 'BlackPearl';
+    -fx-text-fill: #F5F5DC;
+    -fx-background-color: transparent;
+}
+
+.list-view {
+    -fx-background-color: rgba(212, 196, 190, 0.35);
+}

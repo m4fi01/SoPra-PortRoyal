@@ -1,0 +1,16 @@
+@font-face {
+    src: local("fonts/Skullsandcrossbones-RppKM.ttf");
+    src: local("fonts/Blackpearl-vPxA.ttf");
+}
+
+.title{
+    -fx-font-family: "skullsandcrossbones";
+}
+
+.normal{
+    -fx-font-family: "BlackPearl";
+}
+
+.menuTitle{
+    -fx-font-family: "skullsandcrossbones";
+}
